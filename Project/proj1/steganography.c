@@ -21,7 +21,10 @@
 //Determines what color the cell at the given row/col should be. This should not affect Image, and should allocate space for a new Color.
 Color *evaluateOnePixel(Image *image, int row, int col)
 {
-	//YOUR CODE HERE
+	Color *color = (Color*) malloc(sizeof(Color));
+	color->R = image->image[row][col].R;
+	color->G = image->image[row][col].G;
+	color->B = image->image[row][col].B;
 }
 
 //Given an image, creates a new image extracting the LSB of the B channel.
