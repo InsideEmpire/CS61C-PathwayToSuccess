@@ -103,7 +103,8 @@ inc_arr:
     #
     # FIXME What other registers need to be saved?
     #
-    addi sp, sp, -8
+    addi sp, sp, -12
+    sw s1, 8(sp)
     sw s0, 4(sp)
     sw ra, 0(sp)
     # END PROLOGUE
@@ -120,15 +121,24 @@ inc_arr_loop:
     # Hint: What does the "t" in "t0" stand for?
     # Also ask yourself this: why don't we need to preserve t1?
     #
+    # BEGIN PROLOGUE
+    addi sp, sp, -4
+    sw t0, 0(sp)
+    # END PROLOGUE
     jal helper_fn
     # Finished call for helper_fn
+    # BEGIN EPILOGUE
+    lw t0, 0(sp)
+    addi sp, sp, 4
+    # END EPILOGUE
     addi t0, t0, 1 # Increment counter
     j inc_arr_loop
 inc_arr_end:
     # BEGIN EPILOGUE
+    lw s1, 8(sp)
     lw s0, 4(sp)
     lw ra, 0(sp)
-    addi sp, sp, 4
+    addi sp, sp, 12
     # END EPILOGUE
     ret
 
