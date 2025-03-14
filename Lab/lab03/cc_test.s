@@ -152,11 +152,17 @@ inc_arr_end:
 # as appropriate.
 helper_fn:
     # BEGIN PROLOGUE
+    addi sp, sp, -8
+    sw t1, 0(sp)
+    sw s0, 4(sp)
     # END PROLOGUE
     lw t1, 0(a0)
     addi s0, t1, 1
     sw s0, 0(a0)
     # BEGIN EPILOGUE
+    lw s0, 4(sp)
+    lw t1, 0(sp)
+    addi sp, sp, 8
     # END EPILOGUE
     ret
 
