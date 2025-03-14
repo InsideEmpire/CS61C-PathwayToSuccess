@@ -103,7 +103,8 @@ inc_arr:
     #
     # FIXME What other registers need to be saved?
     #
-    addi sp, sp, -4
+    addi sp, sp, -8
+    sw s0, 4(sp)
     sw ra, 0(sp)
     # END PROLOGUE
     mv s0, a0 # Copy start of array to saved register
@@ -125,6 +126,7 @@ inc_arr_loop:
     j inc_arr_loop
 inc_arr_end:
     # BEGIN EPILOGUE
+    lw s0, 4(sp)
     lw ra, 0(sp)
     addi sp, sp, 4
     # END EPILOGUE
