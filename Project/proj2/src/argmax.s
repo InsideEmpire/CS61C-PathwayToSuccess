@@ -15,20 +15,30 @@
 #   this function terminates the program with error code 77.
 # =================================================================
 argmax:
-
+    addi sp, sp, -8
+    sw s0, 0(sp)
+    sw s1, 4(sp)
     # Prologue
-
-
+    mv s0, a0
+    mv s1, a1
 loop_start:
-
-
+    mv t2, s0 # pointer
+    mv t3, zero #pointer index
+    lw t0, 0(t2) # largest index
+    mv t1, zero # largest element
 loop_continue:
-
-
+    lw t4, 0(t2)
+    bge t1, t4, next
+    mv t1, t4
+    mv t0, t3
+next:
+    addi t2, t2, 4
+    addi t3, t3, 1
+    bgt s1, t3, loop_continue
 loop_end:
-    
-
+    lw s0, 0(sp)
+    lw s1, 4(sp)
+    addi sp, sp, 8
     # Epilogue
-
-
+    mv a0, t0
     ret
