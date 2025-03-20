@@ -19,6 +19,10 @@ argmax:
     sw s0, 0(sp)
     sw s1, 4(sp)
     # Prologue
+
+    li t0, 1
+    blt a1, t0, invalid_length
+
     mv s0, a0
     mv s1, a1
 loop_start:
@@ -42,3 +46,7 @@ loop_end:
     # Epilogue
     mv a0, t0
     ret
+
+invalid_length:
+    li a1, 77
+    jal exit2

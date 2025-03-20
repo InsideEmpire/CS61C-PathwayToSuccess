@@ -25,6 +25,12 @@ dot:
     sw s3, 12(sp)
     sw s4, 16(sp)
 
+    li t0, 1
+    blt a2, t0, invalid_length
+    
+    blt a3, t0, invalid_stride
+    blt a4, t0, invalid_stride
+
     # Prologue
     mv s0, a0
     mv s1, a1
@@ -63,3 +69,11 @@ loop_end:
     addi sp, sp, 20
     mv a0, t0    # Return dot product
     ret
+
+invalid_length:
+    li a1, 75
+    jal exit2
+
+invalid_stride:
+    li a1, 76
+    jal exit2

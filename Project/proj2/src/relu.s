@@ -17,6 +17,10 @@ relu:
     sw s0, 0(sp)
     sw s1, 4(sp)
     # Prologue
+
+    li t0, 1
+    blt a1, t0, invalid_length
+
     mv s0, a0
     mv s1, a1
     add t1, zero, zero
@@ -36,3 +40,7 @@ loop_end:
     addi sp, sp, 8
     # Epilogue
 	ret
+
+invalid_length:
+    li a1, 78
+    jal exit2
