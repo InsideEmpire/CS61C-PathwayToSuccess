@@ -34,6 +34,10 @@ classify:
     sw s10, 40(sp)
     sw s11, 44(sp)
     sw ra, 48(sp)
+
+    li t0, 5
+    bne a0, t0, incorrect_args_count
+
 	# =====================================
     # LOAD MATRICES
     # =====================================
@@ -169,4 +173,8 @@ done:
     
 malloc_fail:
     li a1, 88
+    jal exit2
+
+incorrect_args_count:
+    li a1, 89
     jal exit2
