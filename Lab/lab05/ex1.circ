@@ -240,7 +240,7 @@ end type_architecture;
       <a name="label" val="RESULT"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="1" loc="(430,310)" name="NOT Gate"/>
+    <comp lib="1" loc="(430,210)" name="NOT Gate"/>
     <comp lib="1" loc="(480,190)" name="AND Gate"/>
     <comp lib="1" loc="(480,290)" name="AND Gate"/>
     <comp lib="1" loc="(620,240)" name="OR Gate"/>
@@ -252,13 +252,13 @@ end type_architecture;
     <wire from="(250,300)" to="(270,300)"/>
     <wire from="(270,300)" to="(270,310)"/>
     <wire from="(270,300)" to="(380,300)"/>
-    <wire from="(270,310)" to="(400,310)"/>
+    <wire from="(270,310)" to="(430,310)"/>
     <wire from="(320,260)" to="(320,270)"/>
     <wire from="(320,270)" to="(430,270)"/>
     <wire from="(380,170)" to="(380,190)"/>
     <wire from="(380,170)" to="(430,170)"/>
     <wire from="(380,210)" to="(380,300)"/>
-    <wire from="(380,210)" to="(430,210)"/>
+    <wire from="(380,210)" to="(400,210)"/>
     <wire from="(480,190)" to="(520,190)"/>
     <wire from="(480,290)" to="(520,290)"/>
     <wire from="(520,190)" to="(520,220)"/>
