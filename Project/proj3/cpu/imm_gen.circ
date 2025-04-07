@@ -411,7 +411,9 @@ end TCL_Generic;
       <a name="label" val="ImmSel"/>
       <a name="width" val="3"/>
     </comp>
-    <comp lib="0" loc="(210,620)" name="Pin"/>
+    <comp lib="0" loc="(210,620)" name="Constant">
+      <a name="value" val="0x0"/>
+    </comp>
     <comp lib="0" loc="(220,160)" name="Tunnel">
       <a name="label" val="inst"/>
       <a name="width" val="32"/>
@@ -420,10 +422,13 @@ end TCL_Generic;
       <a name="label" val="ImmSel"/>
       <a name="width" val="3"/>
     </comp>
-    <comp lib="0" loc="(260,540)" name="Pin">
+    <comp lib="0" loc="(260,540)" name="Constant">
+      <a name="value" val="0x0"/>
       <a name="width" val="12"/>
     </comp>
-    <comp lib="0" loc="(270,440)" name="Pin"/>
+    <comp lib="0" loc="(270,440)" name="Constant">
+      <a name="value" val="0x0"/>
+    </comp>
     <comp lib="0" loc="(310,400)" name="Splitter">
       <a name="appear" val="center"/>
       <a name="bit1" val="0"/>
