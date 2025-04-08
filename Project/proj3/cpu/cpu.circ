@@ -278,10 +278,15 @@ end TCL_Generic;
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1240,1360)" name="Tunnel">
-      <a name="label" val="BrLt"/>
+      <a name="label" val="BrEq"/>
     </comp>
     <comp lib="0" loc="(1240,1390)" name="Tunnel">
-      <a name="label" val="BrEq"/>
+      <a name="label" val="BrLt"/>
+    </comp>
+    <comp lib="0" loc="(1270,680)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="ALUSel"/>
+      <a name="width" val="4"/>
     </comp>
     <comp lib="0" loc="(130,480)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -366,6 +371,19 @@ end TCL_Generic;
       <a name="facing" val="east"/>
       <a name="label" val="INSTRUCTION2"/>
       <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(140,720)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="INSTRUCTION"/>
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(140,740)" name="Constant">
+      <a name="value" val="0x13"/>
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(140,770)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="PCSel"/>
     </comp>
     <comp lib="0" loc="(1410,190)" name="Pin">
       <a name="facing" val="south"/>
@@ -721,11 +739,6 @@ end TCL_Generic;
       <a name="label" val="PROGRAM_COUNTER"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(230,730)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="INSTRUCTION"/>
-      <a name="width" val="32"/>
-    </comp>
     <comp lib="0" loc="(250,150)" name="Pin">
       <a name="facing" val="west"/>
       <a name="label" val="PROGRAM_COUNTER"/>
@@ -967,6 +980,10 @@ end TCL_Generic;
       <a name="enable" val="false"/>
       <a name="width" val="32"/>
     </comp>
+    <comp lib="2" loc="(170,730)" name="Multiplexer">
+      <a name="enable" val="false"/>
+      <a name="width" val="32"/>
+    </comp>
     <comp lib="2" loc="(1740,560)" name="Multiplexer">
       <a name="enable" val="false"/>
       <a name="width" val="4"/>
@@ -1075,6 +1092,10 @@ end TCL_Generic;
     <comp lib="8" loc="(499,100)" name="Text">
       <a name="text" val="Inputs from IMEM"/>
     </comp>
+    <comp lib="8" loc="(74,762)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="NOP:addi x0, x0, 0"/>
+    </comp>
     <comp lib="8" loc="(973,358)" name="Text">
       <a name="font" val="SansSerif plain 22"/>
       <a name="text" val="It is OK to move the PC, RegFile, ALU, MEM, Branch Comp, Imm Gen, and Control Logic to wherever is most convenient for you when constructing your CPU, and to delete this text"/>
@@ -1106,6 +1127,7 @@ end TCL_Generic;
     <wire from="(1230,1390)" to="(1240,1390)"/>
     <wire from="(1230,190)" to="(1230,220)"/>
     <wire from="(1250,210)" to="(1300,210)"/>
+    <wire from="(1270,650)" to="(1270,680)"/>
     <wire from="(130,440)" to="(150,440)"/>
     <wire from="(130,480)" to="(150,480)"/>
     <wire from="(1300,1120)" to="(1340,1120)"/>
@@ -1125,6 +1147,8 @@ end TCL_Generic;
     <wire from="(140,1430)" to="(250,1430)"/>
     <wire from="(140,1460)" to="(200,1460)"/>
     <wire from="(140,1490)" to="(150,1490)"/>
+    <wire from="(140,760)" to="(140,770)"/>
+    <wire from="(140,760)" to="(150,760)"/>
     <wire from="(1410,190)" to="(1410,220)"/>
     <wire from="(1430,210)" to="(1480,210)"/>
     <wire from="(150,1490)" to="(150,1510)"/>
@@ -1132,11 +1156,13 @@ end TCL_Generic;
     <wire from="(150,450)" to="(170,450)"/>
     <wire from="(150,470)" to="(150,480)"/>
     <wire from="(150,470)" to="(170,470)"/>
+    <wire from="(150,750)" to="(150,760)"/>
     <wire from="(1500,190)" to="(1500,220)"/>
     <wire from="(1520,210)" to="(1570,210)"/>
     <wire from="(1590,190)" to="(1590,220)"/>
     <wire from="(1610,210)" to="(1650,210)"/>
     <wire from="(1650,90)" to="(1650,210)"/>
+    <wire from="(170,730)" to="(230,730)"/>
     <wire from="(1700,610)" to="(1720,610)"/>
     <wire from="(1700,940)" to="(1710,940)"/>
     <wire from="(1710,1000)" to="(1730,1000)"/>
