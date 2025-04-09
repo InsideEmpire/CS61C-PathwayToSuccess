@@ -302,25 +302,21 @@
       <a name="addrWidth" val="14"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="label" val="DMEM_3"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <comp lib="2" loc="(420,180)" name="RAM">
       <a name="addrWidth" val="14"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="label" val="DMEM_0"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <comp lib="2" loc="(420,460)" name="RAM">
       <a name="addrWidth" val="14"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="label" val="DMEM_1"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <comp lib="2" loc="(420,740)" name="RAM">
       <a name="addrWidth" val="14"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="label" val="DMEM_2"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <wire from="(210,190)" to="(320,190)"/>
     <wire from="(210,280)" to="(230,280)"/>
