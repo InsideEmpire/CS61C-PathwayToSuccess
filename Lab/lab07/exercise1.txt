@@ -1,7 +1,7 @@
 Scenario 1
-    1.
-    2.
-    3.
+    1. Because step size in bytes(which is 8 * 4) is exactly equal to chache size in bytes.
+    2. What is our hit rate if we increase Rep Count arbitrarily? ANS: 0.0 Why? ANS: Cause diffent memory access maps to the same cache set(#0) and continuously evicts the previous one. Even repeating loop many times doesn't help.
+    3. step size, 1(hit rate: 50%) or array size, 32(hit rate: 75%)
 
 Scenario 2
     1.
