@@ -4,9 +4,9 @@ Scenario 1
     3. step size, 1(hit rate: 50%) or array size, 32(hit rate: 75%)
 
 Scenario 2
-    1.
-    2.
-    3.
+    1. How many memory accesses are there per iteration of the inner loop? ANS: 2(one read and one write)
+    2. Pattern: "MHHH" Why? ANS: first read is miss. Then first write is hit. Step size times length is 8 bytes, which is half block size(16 bytes). So the second read/write would access to the same block, resulting 2 hits.
+    3. The hit rate remains 3/4. Why? ANS: check the pattern "MHHH" per iteration.
 
 Scenario 3
     1.
