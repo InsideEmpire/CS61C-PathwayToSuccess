@@ -9,11 +9,11 @@ Scenario 2
     3. The hit rate remains 3/4. Why? ANS: check the pattern "MHHH" per iteration.
 
 Scenario 3
-    1.
-    2.
-    3.
-    4.
-    5.
+    1. L1_HR = 50%, L2_HR = 0%, Overall_HR = 50%
+    2. 32 accesses to L1 cache. 16 of them are missed.
+    3. 16 accesses to L2 cache.
+    4. Array Size, 64
+    5. =, =, +, =
 
 --- lines below are ignored by the AG ---
 
