@@ -1,19 +1,19 @@
 Scenario 1
-    1.
-    2.
-    3.
+    1. Because step size in bytes(which is 8 * 4) is exactly equal to chache size in bytes.
+    2. What is our hit rate if we increase Rep Count arbitrarily? ANS: 0.0 Why? ANS: Cause diffent memory access maps to the same cache set(#0) and continuously evicts the previous one. Even repeating loop many times doesn't help.
+    3. step size, 1(hit rate: 50%) or array size, 32(hit rate: 75%)
 
 Scenario 2
-    1.
-    2.
-    3.
+    1. How many memory accesses are there per iteration of the inner loop? ANS: 2(one read and one write)
+    2. Pattern: "MHHH" Why? ANS: first read is miss. Then first write is hit. Step size times length is 8 bytes, which is half block size(16 bytes). So the second read/write would access to the same block, resulting 2 hits.
+    3. The hit rate remains 3/4. Why? ANS: check the pattern "MHHH" per iteration.
 
 Scenario 3
-    1.
-    2.
-    3.
-    4.
-    5.
+    1. L1_HR = 50%, L2_HR = 0%, Overall_HR = 50%
+    2. 32 accesses to L1 cache. 16 of them are missed.
+    3. 16 accesses to L2 cache.
+    4. Array Size, 64
+    5. =, =, +, =
 
 --- lines below are ignored by the AG ---
 

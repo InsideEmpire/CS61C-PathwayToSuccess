@@ -1,5 +1,5 @@
-1.
-2.
+1. Which 2 orderings perform best for these 1000-by-1000 matrices? ANS: jki, kji Why? ANS: The two loop sequences use spatial locality. i jumps 4 bytes per iteration. But j and k both jump n times 4 bytes per iteration.
+2. Which 2 orderings perform the worst? ANS: ijk, jik Why? ANS: As I explain in question 1
 
 --- lines below are ignored by the AG ---
 
