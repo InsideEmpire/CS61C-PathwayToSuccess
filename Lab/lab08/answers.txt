@@ -1,7 +1,7 @@
 Exercise 1:
-    1.
-    2.
-    3.
+    1. 32 bits or 8 words
+    2. TLB hits: 9～0 TLB misses: 1～10 page hits: 0 page faults: equivalent ot TLB misses
+    3. No, NO
 
 Exercise 2:
     1.
@@ -12,8 +12,8 @@ Exercise 3:
 --- lines below are ignored by the AG ---
 
 Exercise 1 Checkoff Questions:
-    1.
-    2.
+    1. On first access, the TLB doesn't have the mapping → TLB Miss. Then, the page table is checked. If no mapping exists → Page Fault. The OS loads the page from disk into memory, updates the page table (and usually the TLB), then combines the physical page number (PPN) with the offset to get the physical address.
+    2. 3 bits VPN means 8 pages. 2 bits PPN means 4 frames
 
 Exercise 4 Checkoff Question:
     1.
