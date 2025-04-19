@@ -16,4 +16,4 @@ Exercise 1 Checkoff Questions:
     2. 3 bits VPN means 8 pages. 2 bits PPN means 4 frames
 
 Exercise 4 Checkoff Question:
-    1.
+    1. Frequent process switching → TLB entries become invalid → higher TLB miss rate
