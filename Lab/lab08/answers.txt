@@ -7,7 +7,7 @@ Exercise 2:
     1. 00, 20, 40, 60, 80, A0, C0, E0, 00, 20
 
 Exercise 3:
-    1.
+    1. Increase the physical memory size
 
 --- lines below are ignored by the AG ---
 
