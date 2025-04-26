@@ -174,6 +174,10 @@ void deallocate_matrix(matrix *mat) {
             free(mat->data[i]);
         }
         free(mat->data);
+
+        if (mat->parent != NULL) {
+            mat->parent->ref_cnt -= 1;
+        }
     }
     free(mat);
 }
