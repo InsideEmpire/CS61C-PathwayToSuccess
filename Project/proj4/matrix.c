@@ -359,7 +359,21 @@ int pow_matrix(matrix *result, matrix *mat, int pow) {
  * Return 0 upon success and a nonzero value upon failure.
  */
 int neg_matrix(matrix *result, matrix *mat) {
-    /* TODO: YOUR CODE HERE */
+    if (result == NULL || mat == NULL) {
+        return -1;
+    }
+    
+    if (result->rows != mat->rows || result->cols != mat->cols) {
+        return -1;
+    }
+
+    for (int i = 0; i < mat->rows; i++) {
+        for (int j = 0; j < mat->cols; j++) {
+            result->data[i][j] = -mat->data[i][j];
+        }
+    }
+
+    return 0;
 }
 
 /*
@@ -367,6 +381,21 @@ int neg_matrix(matrix *result, matrix *mat) {
  * Return 0 upon success and a nonzero value upon failure.
  */
 int abs_matrix(matrix *result, matrix *mat) {
-    /* TODO: YOUR CODE HERE */
+    if (result == NULL || mat == NULL) {
+        return -1;
+    }
+
+    if (result->rows != mat->rows || result->cols != mat->cols) {
+        return -1;
+    }
+
+    for (int i = 0; i < mat->rows; i++) {
+        for (int j = 0; j < mat->cols; j++) {
+            result->data[i][j] = mat->data[i][j] >= 0 ? mat->data[i][j] : -mat->data[i][j];
+        }
+    }
+
+    return 0;
+
 }
 
