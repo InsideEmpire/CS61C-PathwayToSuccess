@@ -198,7 +198,11 @@ void set(matrix *mat, int row, int col, double val) {
  * Set all entries in mat to val
  */
 void fill_matrix(matrix *mat, double val) {
-    /* TODO: YOUR CODE HERE */
+    for (int i = 0; i < mat->rows; i++) {
+        for (int j = 0; j < mat->cols; j++) {
+            mat->data[i][j] = val;
+        }
+    }
 }
 
 /*
