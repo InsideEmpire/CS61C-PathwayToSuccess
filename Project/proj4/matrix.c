@@ -210,7 +210,21 @@ void fill_matrix(matrix *mat, double val) {
  * Return 0 upon success and a nonzero value upon failure.
  */
 int add_matrix(matrix *result, matrix *mat1, matrix *mat2) {
-    /* TODO: YOUR CODE HERE */
+    if (mat1->rows != mat2->rows || mat1->cols != mat2->cols) {
+        return -1;
+    }
+
+    if (result == NULL) {
+        return -1;
+    }
+
+    for (int i = 0; i < mat1->rows; i++) {
+        for (int j = 0; j < mat1->cols; j++) {
+            result->data[i][j] = mat1->data[i][j] + mat2->data[i][j];
+        }
+    }
+
+    return 0;
 }
 
 /*
