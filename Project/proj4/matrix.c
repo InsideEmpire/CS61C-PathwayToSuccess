@@ -112,7 +112,53 @@ int allocate_matrix(matrix **mat, int rows, int cols) {
  */
 int allocate_matrix_ref(matrix **mat, matrix *from, int row_offset, int col_offset,
                         int rows, int cols) {
-    /* TODO: YOUR CODE HERE */
+    if (mat == NULL || from == NULL) {
+        return -1;
+    }
+    if (rows <= 0 || cols <= 0) {
+        return -1;
+    }
+    if (row_offset + rows > from->rows || col_offset + cols > from->cols) {
+        return -1;
+    }    
+
+    *mat = malloc(sizeof(matrix));
+    if (*mat == NULL) {
+        return -1;
+    }
+
+    (*mat)->data = malloc(rows * sizeof(double *));
+    if ((*mat)->data == NULL) {
+        free(*mat);
+        return -1;
+    }
+    for (int i = 0; i < rows; i++) {
+        (*mat)->data[i] = malloc(cols * sizeof(double));
+        if ((*mat)->data[i] == NULL) {
+            for (int j = 0; j < i; j++) {
+                free((*mat)->data[j]);
+            }
+            free((*mat)->data);
+            free(*mat);
+            return -1;
+        }
+        for (int j = 0; j < cols; j++) {
+            (*mat)->data[i][j] = from->data[row_offset + i][col_offset + j];
+        }
+    }
+
+    (*mat)->rows = rows;
+    (*mat)->cols = cols;
+    (*mat)->parent = from;
+    if (rows == 1 || cols == 1) {
+        (*mat)->is_1d = rows * cols;
+    } else {
+        (*mat)->is_1d = 0;
+    }
+    (*mat)->ref_cnt = 1;
+    from->ref_cnt += 1;
+
+    return 0;
 }
 
 /*
