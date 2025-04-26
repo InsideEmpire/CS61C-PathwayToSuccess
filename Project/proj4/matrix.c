@@ -285,7 +285,73 @@ int mul_matrix(matrix *result, matrix *mat1, matrix *mat2) {
  * Remember that pow is defined with matrix multiplication, not element-wise multiplication.
  */
 int pow_matrix(matrix *result, matrix *mat, int pow) {
-    /* TODO: YOUR CODE HERE */
+    if (mat->rows != mat->cols) {
+        return -1;
+    }
+
+    if (result == NULL) {
+        return -1;
+    }
+
+    if (pow == 0) {
+        for (int i = 0; i < mat->rows; i++) {
+            for (int j = 0; j < mat->cols; j++) {
+                if (i == j) {
+                    result->data[i][j] = 1.0;
+                } else {
+                    result->data[i][j] = 0.0;
+                }
+            }
+        }
+        return 0;
+    }
+
+    for (int i = 0; i < mat->rows; i++) {
+        for (int j = 0; j < mat->cols; j++) {
+            if (i == j) {
+                result->data[i][j] = 1.0;
+            } else {
+                result->data[i][j] = 0.0;
+            }
+        }
+    }
+
+    matrix *temp;
+    if (allocate_matrix(&temp, mat->rows, mat->cols) != 0) {
+        return -1;
+    }
+    for (int i = 0; i < mat->rows; i++) {
+        for (int j = 0; j < mat->cols; j++) {
+            temp->data[i][j] = mat->data[i][j];
+        }
+    }
+
+    int pow_temp = 1;
+    while (pow_temp < pow) {
+        if (pow_temp * 2 <= pow) {
+            if (mul_matrix(temp, temp, temp) != 0) {
+                deallocate_matrix(temp);
+                return -1;
+            }
+            pow_temp *= 2;
+        } else {
+            if (mul_matrix(temp, temp, mat) != 0) {
+                deallocate_matrix(temp);
+                return -1;
+            }
+            pow_temp += 1;
+        }
+    }
+
+    for (int i = 0; i < mat->rows; i++) {
+        for (int j = 0; j < mat->cols; j++) {
+            result->data[i][j] = temp->data[i][j];
+        }
+    }
+
+    deallocate_matrix(temp);
+
+    return 0;
 }
 
 /*
