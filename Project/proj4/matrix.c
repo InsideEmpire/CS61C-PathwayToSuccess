@@ -259,7 +259,24 @@ int sub_matrix(matrix *result, matrix *mat1, matrix *mat2) {
  * Remember that matrix multiplication is not the same as multiplying individual elements.
  */
 int mul_matrix(matrix *result, matrix *mat1, matrix *mat2) {
-    /* TODO: YOUR CODE HERE */
+    if (mat1->cols != mat2->rows) {
+        return -1;
+    }
+
+    if (result == NULL) {
+        return -1;
+    }
+
+    for (int i = 0; i < mat1->rows; i++) {
+        for (int j = 0; j < mat2->cols; j++) {
+            result->data[i][j] = 0.0;
+            for (int k = 0; k < mat1->cols; k++) {
+                result->data[i][j] += mat1->data[i][k] * mat2->data[k][j];
+            }
+        }
+    }
+
+    return 0;
 }
 
 /*
