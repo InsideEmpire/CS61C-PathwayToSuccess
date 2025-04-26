@@ -169,7 +169,13 @@ int allocate_matrix_ref(matrix **mat, matrix *from, int row_offset, int col_offs
  * See the spec for more information.
  */
 void deallocate_matrix(matrix *mat) {
-    /* TODO: YOUR CODE HERE */
+    if (mat->ref_cnt == 1) {
+        for (int i = 0; i < mat->rows; i++) {
+            free(mat->data[i]);
+        }
+        free(mat->data);
+    }
+    free(mat);
 }
 
 /*
