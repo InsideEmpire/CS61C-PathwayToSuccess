@@ -23,7 +23,7 @@
  
     - Lab 9✅ - [Solution](Lab/lab09)
  
-    - Lab 10 - [Solution](Lab/lab10)
+    - Lab 10✅ - [Solution](Lab/lab10)
  
     - Lab 11 - [Solution](Lab/lab11)
 
